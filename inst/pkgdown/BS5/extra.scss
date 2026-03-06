@@ -1,0 +1,59 @@
+$rladies-purple: #881ef9;
+$rladies-blue: #146af9;
+$rladies-rose: #ff5b92;
+$rladies-charcoal: #2f2f30;
+$rladies-lavender: #ededf4;
+$rladies-surface-alt: #f3f0fa;
+
+h1 {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  letter-spacing: -0.01em;
+}
+
+a {
+  transition: color 0.2s ease;
+}
+
+blockquote {
+  border-left: 4px solid $rladies-purple;
+  background: rgba($rladies-purple, 0.06);
+  border-radius: 0 0.75rem 0.75rem 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+code:not(pre code) {
+  border-radius: 0.25rem;
+  padding: 0.15em 0.4em;
+}
+
+div.sourceCode {
+  border-radius: 0.5rem;
+  border-left: 3px solid rgba($rladies-purple, 0.3);
+}
+
+table > tbody > tr:hover {
+  background-color: rgba($rladies-purple, 0.04);
+}
+
+[data-bs-theme="dark"] {
+  blockquote {
+    background: rgba($rladies-purple, 0.12);
+  }
+
+  code:not(pre code) {
+    background: rgba($rladies-purple, 0.15);
+  }
+
+  div.sourceCode {
+    border-left-color: rgba($rladies-purple, 0.4);
+  }
+
+  table > tbody > tr:hover {
+    background-color: rgba($rladies-purple, 0.08);
+  }
+}

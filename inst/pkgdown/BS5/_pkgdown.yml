@@ -1,0 +1,40 @@
+template:
+  light-switch: true
+  bslib:
+    bg: "#f8f8fc"
+    fg: "#2f2f30"
+    primary: "#881ef9"
+    secondary: "#146af9"
+    success: "#146af9"
+    info: "#146af9"
+    warning: "#ff5b92"
+    danger: "#ff5b92"
+    border-radius: "0.5rem"
+    font-size-base: "1em"
+    line-height-base: 1.6
+    headings-font-weight: 600
+    link-decoration: "none"
+    code-color: "#6b0fd4"
+    code-bg: "#f3f0fa"
+    navbar-light-bg: "#f3f0fa"
+    navbar-dark-bg: "#2f2f30"
+    base_font:
+      google: Poppins
+    heading_font:
+      google: Poppins
+    code_font:
+      google: Inconsolata
+    pkgdown-nav-height: 80px
+  includes:
+    in_header: |
+      <link rel="icon" href="favicon-purple.svg" type="image/svg+xml">
+
+navbar:
+  structure:
+    left: [intro, reference, articles, tutorials, news]
+    right: [search, github, lightswitch]
+
+footer:
+  structure:
+    left: developed_by
+    right: built_with
