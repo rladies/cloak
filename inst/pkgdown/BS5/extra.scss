@@ -1,9 +1,32 @@
+// ── Brand palette ──────────────────────────────────────────
 $rladies-purple: #881ef9;
+$rladies-purple-light: #a152f8;
+$rladies-purple-50: #bb86f7;
+$rladies-purple-lighter: #d4b9f5;
+$rladies-purple-dark: #6b0fd4;
 $rladies-blue: #146af9;
+$rladies-blue-75: #4f8ffb;
+$rladies-blue-50: #8ab5fc;
 $rladies-rose: #ff5b92;
+$rladies-rose-75: #fb80ab;
+$rladies-rose-50: #f6a4c3;
 $rladies-charcoal: #2f2f30;
+$rladies-charcoal-75: #5f5f61;
 $rladies-lavender: #ededf4;
+$rladies-surface: #f8f8fc;
 $rladies-surface-alt: #f3f0fa;
+$rladies-muted: #5d5f66;
+
+// ── Dark mode palette (lighter tints for WCAG contrast) ───
+$dark-purple: #bb86f7;
+$dark-purple-light: #d4b9f5;
+$dark-purple-lighter: #e8daf9;
+$dark-blue: #81acf7;
+$dark-rose: #f6a4c3;
+$dark-bg: #121220;
+$dark-card: #1e1e30;
+
+// ── Light mode ─────────────────────────────────────────────
 
 h1 {
   font-weight: 500;
@@ -16,6 +39,7 @@ h2 {
 
 a {
   transition: color 0.2s ease;
+  text-underline-offset: 0.2em;
 }
 
 blockquote {
@@ -36,24 +60,157 @@ div.sourceCode {
   border-left: 3px solid rgba($rladies-purple, 0.3);
 }
 
+.sidebar nav[role="doc-toc"] a:hover,
+.sidebar nav[role="doc-toc"] a.active {
+  color: $rladies-purple;
+}
+
+table {
+  border-radius: 0.5rem;
+}
+
 table > tbody > tr:hover {
   background-color: rgba($rladies-purple, 0.04);
 }
 
+.navbar {
+  border-bottom: 2px solid rgba($rladies-purple, 0.15);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 140px;
+    height: 36px;
+    background: url("logo-horizontal.svg") no-repeat center / contain;
+    flex-shrink: 0;
+  }
+}
+
+.card {
+  border: 1px solid rgba($rladies-purple, 0.1);
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba($rladies-purple, 0.08);
+  }
+}
+
+footer {
+  border-top: 2px solid rgba($rladies-purple, 0.15);
+}
+
+// ── Dark mode ──────────────────────────────────────────────
+
 [data-bs-theme="dark"] {
+  --bs-body-bg: #{$dark-bg};
+  --bs-body-color: #{$rladies-lavender};
+  --bs-link-color: #{$dark-purple-light};
+  --bs-link-hover-color: #{$dark-purple-lighter};
+  --bs-code-color: #{$dark-purple};
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $rladies-lavender;
+  }
+
+  a:hover {
+    color: $dark-purple-lighter;
+  }
+
   blockquote {
-    background: rgba($rladies-purple, 0.12);
+    border-left-color: $dark-purple;
+    background: rgba($dark-purple, 0.1);
+    color: $rladies-lavender;
+
+    p, em, strong, span {
+      color: $rladies-lavender;
+    }
   }
 
   code:not(pre code) {
-    background: rgba($rladies-purple, 0.15);
+    background: rgba($dark-purple, 0.15);
+    color: $dark-purple-light;
   }
 
   div.sourceCode {
-    border-left-color: rgba($rladies-purple, 0.4);
+    border-left-color: rgba($dark-purple, 0.4);
+  }
+
+  .sidebar nav[role="doc-toc"] a:hover,
+  .sidebar nav[role="doc-toc"] a.active {
+    color: $dark-purple-light;
   }
 
   table > tbody > tr:hover {
-    background-color: rgba($rladies-purple, 0.08);
+    background-color: rgba($dark-purple, 0.08);
+  }
+
+  .navbar {
+    border-bottom-color: rgba($dark-purple, 0.25);
+  }
+
+  .navbar-brand::before {
+    background-image: url("logo-horizontal-white.svg");
+  }
+
+  .card {
+    background-color: $dark-card;
+    border-color: rgba(255, 255, 255, 0.08);
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  footer {
+    border-top-color: rgba($dark-purple, 0.25);
+  }
+}
+
+// ── Print ──────────────────────────────────────────────────
+
+@media print {
+  body {
+    font-size: 11pt;
+    color: #000;
+    background: #fff;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+
+  .navbar, footer, .sidebar {
+    display: none !important;
+  }
+
+  blockquote {
+    border-left-color: #666;
+    background: none;
+  }
+
+  div.sourceCode {
+    border: 1px solid #ccc;
+    border-left-width: 3px;
+  }
+
+  table {
+    break-inside: avoid;
+  }
+
+  h1, h2, h3 {
+    break-after: avoid;
+    color: #000;
   }
 }

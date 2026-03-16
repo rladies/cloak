@@ -10,14 +10,17 @@ template:
     warning: "#ff5b92"
     danger: "#ff5b92"
     border-radius: "0.5rem"
-    font-size-base: "1em"
+    font-size-base: "1rem"
     line-height-base: 1.6
     headings-font-weight: 600
-    link-decoration: "none"
+    link-decoration: "underline"
+    link-color: "#881ef9"
     code-color: "#6b0fd4"
     code-bg: "#f3f0fa"
     navbar-light-bg: "#f3f0fa"
-    navbar-dark-bg: "#2f2f30"
+    navbar-light-color: "#2f2f30"
+    navbar-dark-bg: "#1e1e30"
+    navbar-dark-color: "#ededf4"
     base_font:
       google: Poppins
     heading_font:
