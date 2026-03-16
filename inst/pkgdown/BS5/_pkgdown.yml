@@ -31,6 +31,23 @@ template:
   includes:
     in_header: |
       <link rel="icon" href="favicon-purple.svg" type="image/svg+xml">
+      <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var brand = document.querySelector(".navbar-brand");
+        if (brand) {
+          var light = document.createElement("img");
+          light.src = "rladies-submark.svg";
+          light.alt = "R-Ladies";
+          light.className = "rladies-logo rladies-logo-light";
+          var dark = document.createElement("img");
+          dark.src = "rladies-submark-white.svg";
+          dark.alt = "R-Ladies";
+          dark.className = "rladies-logo rladies-logo-dark";
+          brand.prepend(dark);
+          brand.prepend(light);
+        }
+      });
+      </script>
 
 navbar:
   structure:

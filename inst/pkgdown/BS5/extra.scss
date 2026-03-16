@@ -81,15 +81,16 @@ table > tbody > tr:hover {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
 
-  &::before {
-    content: "";
-    display: inline-block;
-    width: 140px;
-    height: 36px;
-    background: url("logo-horizontal.svg") no-repeat center / contain;
-    flex-shrink: 0;
-  }
+.navbar-brand .rladies-logo {
+  height: 36px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.navbar-brand .rladies-logo-dark {
+  display: none;
 }
 
 .card {
@@ -154,8 +155,12 @@ footer {
     border-bottom-color: rgba($dark-purple, 0.25);
   }
 
-  .navbar-brand::before {
-    background-image: url("logo-horizontal-white.svg");
+  .navbar-brand .rladies-logo-light {
+    display: none;
+  }
+
+  .navbar-brand .rladies-logo-dark {
+    display: inline;
   }
 
   .card {
