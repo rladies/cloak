@@ -5,13 +5,13 @@ Authors@R: c(
     person("Athanasia Mo", "Mowinckel", , "a.m.mowinckel@psykologi.uio.no",
            role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-5756-0223")),
-    person("R-Ladies", , , "info@rladies.org",
+    person("RLadies+", , , "info@rladies.org",
            role = c("cph", "fnd"),
            comment = c(ROR = "https://ror.org/05wpb1k41"))
     )
 Description: A pkgdown template implementing the RLadies+ brand identity.
     Provides colors, fonts, logos, and styling that match the RLadies+
-    visual system for use across R-Ladies package documentation sites.
+    visual system for use across RLadies+ package documentation sites.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
